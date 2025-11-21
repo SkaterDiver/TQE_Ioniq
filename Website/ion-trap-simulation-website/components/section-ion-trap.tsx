@@ -68,28 +68,6 @@ export function SectionIonTrap() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          <Card className="bg-card/30 backdrop-blur-sm border-primary/20">
-            <CardContent className="p-8">
-              <div className="aspect-video bg-muted/50 rounded-lg flex items-center justify-center border border-primary/20">
-                <div className="text-center space-y-2">
-                  <div className="w-16 h-16 mx-auto rounded-full bg-primary/20 flex items-center justify-center glow-cyan">
-                    <Atom className="w-8 h-8 text-primary" />
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    SolidWorks Model Placeholder: Basic Ion Trap Structure
-                  </p>
-                  <p className="text-xs text-muted-foreground/70">(Insert model render or simplified drawing here)</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
       </div>
     </section>
   )

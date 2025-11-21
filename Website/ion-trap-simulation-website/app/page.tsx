@@ -9,7 +9,7 @@ import { FloatingNav } from "@/components/floating-nav"
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-x-hidden">
+    <main className="relative min-h-screen overflow-x-hidden" role="main" aria-label="Ion Trap Simulation Study">
       <QuantumBackground />
       <HeroSection />
       <SectionIonTrap />

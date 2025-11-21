@@ -1,12 +1,22 @@
 {
-  "name": "my-v0-project",
-  "version": "0.1.0",
+  "name": "ion-trap-simulation-website",
+  "version": "1.0.0",
   "private": true,
+  "description": "Ion trap simulation website for quantum computing research - HardHaq 2025",
+  "author": "Tings Quantum Engineers",
+  "license": "MIT",
   "scripts": {
-    "build": "next build",
     "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint .",
-    "start": "next start"
+    "lint:fix": "eslint . --fix",
+    "type-check": "tsc --noEmit",
+    "preview": "next build && next start"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
