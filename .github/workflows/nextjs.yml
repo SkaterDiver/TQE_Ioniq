@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
         defaults:
               run:
-                      working-directory: ./Website/ion-trap-simulation-website
+        working-directory: ./Website/ion-trap-simulation-website
     steps:
       - name: Checkout
         uses: actions/checkout@v4
