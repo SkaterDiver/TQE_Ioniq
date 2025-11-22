@@ -1,0 +1,6 @@
+% Model:              3d_pole_trap (1).mph
+% Version:            COMSOL 6.3.0.420
+% Date:               Nov 21 2025, 22:55
+% Table:              Table 1 - Global Evaluation 1
+% depth_eV               minU_eV                  maxU_eV                  trap_x                   trap_y                   trap_z                   offset_mm                P_est_mW (kg^2*m^4/(s^8*A^2))
+0.153629000855247        24.324043409523345       24.47767241037859        0                        5.0E-6                   0.009999999999999998     10.00000124999992        830.3910811743044
