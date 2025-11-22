@@ -6,10 +6,26 @@ import { useRef } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Layers, AlertCircle, TrendingUp } from "lucide-react"
+import Image from "next/image"
 
 export function Section2DTrap() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+
+  const diagrams = [
+    {
+      label: "3D Surface Trapped Ion Model",
+      src: "/Srf_trap.png",
+    },
+    {
+      label: "Electric Potential Graph",
+      src: "/Electric_Potential_Graph.png",
+    },
+    {
+      label: "Pseudopotential Animation",
+      src: "/Pseudopotential.gif",
+    },
+  ]
 
   return (
     <section id="2d-trap" ref={ref} className="relative z-10 py-20 px-4">
@@ -196,6 +212,7 @@ export function Section2DTrap() {
               </p>
             </CardHeader>
             <CardContent>
+              {/* ... existing metrics (unchanged) ... */}
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="space-y-2">
                   <div className="text-sm text-muted-foreground">Trap Depth</div>
@@ -249,29 +266,27 @@ export function Section2DTrap() {
           </Card>
         </motion.div>
 
-        {/* Diagram Placeholders */}
+        {/* REAL IMAGES (replacing placeholders) */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
           className="grid md:grid-cols-3 gap-6"
         >
-          {["SolidWorks Model: 2D Electrode Layout", "2D Potential Map", "Chip Cross-Section Field Lines"].map(
-            (placeholder) => (
-              <Card key={placeholder} className="bg-card/30 backdrop-blur-sm border-secondary/20">
-                <CardContent className="p-6">
-                  <div className="aspect-square bg-muted/50 rounded-lg flex items-center justify-center border border-secondary/20">
-                    <div className="text-center space-y-2 p-4">
-                      <div className="w-12 h-12 mx-auto rounded-full bg-secondary/20 flex items-center justify-center glow-violet">
-                        <Layers className="w-6 h-6 text-secondary" />
-                      </div>
-                      <p className="text-xs text-muted-foreground">{placeholder}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ),
-          )}
+          {diagrams.map((item) => (
+            <Card key={item.label} className="bg-card/30 backdrop-blur-sm border-secondary/20">
+              <CardContent className="p-6">
+                <Image
+                  src={item.src}
+                  alt={item.label}
+                  width={600}
+                  height={600}
+                  className="rounded-lg border border-secondary/20 object-cover"
+                />
+                <p className="text-xs text-muted-foreground mt-3 text-center">{item.label}</p>
+              </CardContent>
+            </Card>
+          ))}
         </motion.div>
       </div>
     </section>
