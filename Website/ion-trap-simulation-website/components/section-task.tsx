@@ -1,15 +1,17 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { useInView } from "framer-motion"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Target, Gauge, Zap, MapPin, Ruler, Activity } from "lucide-react"
+import { Target, Gauge, Zap, MapPin, Ruler, Activity, ChevronDown } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 export function SectionTask() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const [expandedMetric, setExpandedMetric] = useState<string | null>(null)
 
   const metrics = [
     {
@@ -71,6 +73,10 @@ export function SectionTask() {
     },
   ]
 
+  const toggleMetric = (metric: string) => {
+    setExpandedMetric(expandedMetric === metric ? null : metric)
+  }
+
   return (
     <section id="task" ref={ref} className="relative z-10 py-20 px-4">
       <div className="max-w-6xl mx-auto">
@@ -91,75 +97,12 @@ export function SectionTask() {
           </p>
         </motion.div>
 
-        {/* The Adjustable Parameters */}
+        {/* Placeholder Section - Now at the top */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-12"
-        >
-          <Card className="bg-card/50 backdrop-blur-sm border-primary/20">
-            <CardHeader>
-              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4 glow-cyan">
-                <Target className="w-6 h-6 text-primary" />
-              </div>
-              <CardTitle>The Adjustable Parameters</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-6">
-                {metrics.map((item, index) => {
-                  const Icon = item.icon
-                  const colorClass =
-                    item.color === "primary"
-                      ? "bg-primary/20 text-primary border-primary/20"
-                      : item.color === "secondary"
-                        ? "bg-secondary/20 text-secondary border-secondary/20"
-                        : "bg-accent/20 text-accent border-accent/20"
-
-                  return (
-                    <motion.div
-                      key={item.metric}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={isInView ? { opacity: 1, x: 0 } : {}}
-                      transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                      className="p-6 rounded-lg bg-muted/30 border border-primary/10"
-                    >
-                      <div className="flex items-start gap-4">
-                        <div className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${colorClass}`}>
-                          <Icon className="w-5 h-5" />
-                        </div>
-                        <div className="flex-1 space-y-3">
-                          <h4 className="font-mono text-lg font-semibold text-primary">{item.metric}</h4>
-
-                          <div>
-                            <p className="text-sm font-semibold text-foreground/80 mb-1">Meaning:</p>
-                            <p className="text-sm text-muted-foreground leading-relaxed">{item.meaning}</p>
-                          </div>
-
-                          <div>
-                            <p className="text-sm font-semibold text-foreground/80 mb-1">How It Is Calculated:</p>
-                            <p className="text-sm text-muted-foreground leading-relaxed">{item.calculation}</p>
-                          </div>
-
-                          <div>
-                            <p className="text-sm font-semibold text-foreground/80 mb-1">Why It Matters:</p>
-                            <p className="text-sm text-muted-foreground leading-relaxed">{item.importance}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  )
-                })}
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
-
-        {/* Placeholder Section - To be filled */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
         >
           <Card className="bg-card/50 backdrop-blur-sm border-secondary/20">
             <CardHeader>
@@ -172,6 +115,99 @@ export function SectionTask() {
               <p className="text-muted-foreground leading-relaxed">
                 [Content to be provided by user]
               </p>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        {/* The Adjustable Parameters - Now with grid layout and toggleable */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mb-12"
+        >
+          <Card className="bg-card/50 backdrop-blur-sm border-primary/20">
+            <CardHeader>
+              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4 glow-cyan">
+                <Target className="w-6 h-6 text-primary" />
+              </div>
+              <CardTitle>The Adjustable Parameters</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {metrics.map((item, index) => {
+                  const Icon = item.icon
+                  const isExpanded = expandedMetric === item.metric
+                  const colorClass =
+                    item.color === "primary"
+                      ? "bg-primary/20 text-primary border-primary/20"
+                      : item.color === "secondary"
+                        ? "bg-secondary/20 text-secondary border-secondary/20"
+                        : "bg-accent/20 text-accent border-accent/20"
+
+                  return (
+                    <motion.div
+                      key={item.metric}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                      className={cn(
+                        "rounded-lg bg-muted/30 border border-primary/10 overflow-hidden transition-all duration-300",
+                        isExpanded && "lg:col-span-3 md:col-span-2"
+                      )}
+                    >
+                      <button
+                        onClick={() => toggleMetric(item.metric)}
+                        className="w-full p-4 hover:bg-muted/50 transition-colors text-left"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${colorClass}`}>
+                            <Icon className="w-5 h-5" />
+                          </div>
+                          <h4 className="font-mono text-sm md:text-base font-semibold text-primary flex-1">
+                            {item.metric}
+                          </h4>
+                          <ChevronDown
+                            className={cn(
+                              "w-5 h-5 text-muted-foreground transition-transform duration-300",
+                              isExpanded && "rotate-180"
+                            )}
+                          />
+                        </div>
+                      </button>
+
+                      <AnimatePresence>
+                        {isExpanded && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="px-4 pb-4 pt-2 space-y-3 border-t border-primary/10">
+                              <div>
+                                <p className="text-sm font-semibold text-foreground/80 mb-1">Meaning:</p>
+                                <p className="text-sm text-muted-foreground leading-relaxed">{item.meaning}</p>
+                              </div>
+
+                              <div>
+                                <p className="text-sm font-semibold text-foreground/80 mb-1">How It Is Calculated:</p>
+                                <p className="text-sm text-muted-foreground leading-relaxed">{item.calculation}</p>
+                              </div>
+
+                              <div>
+                                <p className="text-sm font-semibold text-foreground/80 mb-1">Why It Matters:</p>
+                                <p className="text-sm text-muted-foreground leading-relaxed">{item.importance}</p>
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                  )
+                })}
+              </div>
             </CardContent>
           </Card>
         </motion.div>

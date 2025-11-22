@@ -1,14 +1,13 @@
 "use client"
 
-import React, { useEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
 
-export function QuantumBackground(): JSX.Element {
+export function QuantumBackground() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
 
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
-
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
@@ -54,7 +53,6 @@ export function QuantumBackground(): JSX.Element {
 
     for (let i = 0; i < TARGET_PARTICLE_COUNT; i++) particles.push(spawnParticle())
 
-    let lastClearTime = Date.now()
     let animationId: number | null = null
     let lastFrameTime = performance.now()
 

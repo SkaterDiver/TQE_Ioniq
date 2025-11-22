@@ -9,7 +9,6 @@ const nextConfig = {
     ],
   },
   reactStrictMode: true,
-  swcMinify: true,
   // Only enable this during development if needed
   // typescript: {
   //   ignoreBuildErrors: false,
