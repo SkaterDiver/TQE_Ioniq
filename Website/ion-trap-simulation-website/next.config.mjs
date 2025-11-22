@@ -10,7 +10,7 @@ const nextConfig = {
   },
   reactStrictMode: true,
     output: 'export',
-    unoptimizedImages: true,
+  skipTrailingSlashRedirect: true,
   // Only enable this during development if needed
   // typescript: {
   //   ignoreBuildErrors: false,
