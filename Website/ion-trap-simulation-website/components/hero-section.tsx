@@ -22,7 +22,7 @@ export function HeroSection() {
           className="mb-12"
         >
           <h1 className="text-2xl md:text-3xl font-bold tracking-wider text-primary mb-2">
-            TINGS QUANTUM ENGINEERS
+            TING'S QUANTUM ENGINEERS
           </h1>
           <div className="h-px w-32 mx-auto bg-gradient-to-r from-transparent via-primary to-transparent" />
         </motion.div>

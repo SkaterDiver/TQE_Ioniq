@@ -62,7 +62,7 @@ export function SectionComparison() {
             <span className="gradient-text">Comparison</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            A detailed comparison of 3D RF Paul Traps vs. 2D Surface Ion Traps
+            A detailed comparison of 3D RF Paul Traps vs. Surface Ion Traps
           </p>
         </motion.div>
 
@@ -84,7 +84,7 @@ export function SectionComparison() {
                 </div>
                 <div className="text-center">
                   <Badge variant="outline" className="border-secondary/50 bg-secondary/10">
-                    2D Surface Ion Trap
+                    Surface Ion Trap
                   </Badge>
                 </div>
               </div>
@@ -127,7 +127,136 @@ export function SectionComparison() {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-12 grid md:grid-cols-2 gap-6"
+          className="mt-12"
+        >
+          <Card className="bg-card/50 backdrop-blur-sm border-primary/20">
+            <CardHeader className="border-b border-border/50">
+              <CardTitle className="text-2xl text-center">
+                <span className="gradient-text">Efficiency Formulas</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-8">
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Pole Trap Formula */}
+                <div className="space-y-4">
+                  <div className="text-center">
+                    <Badge variant="outline" className="border-primary/50 bg-primary/10 mb-4">
+                      3D RF Pole Trap
+                    </Badge>
+                  </div>
+                  <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
+                    <div className="leading-relaxed overflow-x-auto">
+                      <div className="text-center space-y-4">
+                        <div className="text-base font-semibold text-primary mb-4">
+                          η<sub>pole</sub> = 10³ ×
+                          <span className="inline-flex flex-col items-center mx-1 align-middle">
+                            <span className="border-b border-current px-2 pb-1">
+                              <span className="inline-flex flex-col items-center align-middle">
+                                <span className="text-xs">ω × ε₀ × π × L<sub>rod</sub> × V<sub>RF</sub></span>
+                              </span>
+                            </span>
+                            <span className="pt-1 text-xs">d<sub>rod</sub> × √2</span>
+                          </span>
+                          <span className="align-middle">²</span>
+                        </div>
+
+                        <div className="text-xs bg-card/50 p-4 rounded-md border border-border/30">
+                          <div className="font-semibold mb-2 text-foreground">Expanded form:</div>
+                          <div className="space-y-2">
+                            <div>η<sub>pole</sub> = 10³ × [η<sub>0</sub>]²</div>
+                            <div>where η<sub>0</sub> =
+                              <span className="inline-flex flex-col items-center mx-1 align-middle">
+                                <span className="border-b border-current px-1 text-[0.65rem]">ω × C × V<sub>RF</sub></span>
+                                <span className="text-[0.65rem]">√2</span>
+                              </span>
+                            </div>
+                            <div>and C =
+                              <span className="inline-flex flex-col items-center mx-1 align-middle">
+                                <span className="border-b border-current px-1 text-[0.65rem]">ε₀ × π × L<sub>rod</sub></span>
+                                <span className="text-[0.65rem]">d<sub>rod</sub></span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="mt-4 pt-4 border-t border-border/30 text-xs text-muted-foreground space-y-1">
+                          <div className="font-semibold mb-2 text-foreground">Variables:</div>
+                          <div>ω: RF angular frequency</div>
+                          <div>ε₀: permittivity of free space</div>
+                          <div>L<sub>rod</sub>: rod length</div>
+                          <div>d<sub>rod</sub>: rod spacing</div>
+                          <div>V<sub>RF</sub>: RF voltage</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Surface Trap Formula */}
+                <div className="space-y-4">
+                  <div className="text-center">
+                    <Badge variant="outline" className="border-secondary/50 bg-secondary/10 mb-4">
+                      Surface RF Trap
+                    </Badge>
+                  </div>
+                  <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
+                    <div className="leading-relaxed overflow-x-auto">
+                      <div className="text-center space-y-4">
+                        <div className="text-base font-semibold text-secondary mb-4">
+                          η<sub>surf</sub> = 10³ ×
+                          <span className="inline-flex flex-col items-center mx-1 align-middle">
+                            <span className="border-b border-current px-2 pb-1">
+                              <span className="inline-flex flex-col items-center align-middle">
+                                <span className="text-xs">ω × ε₀ × π × w<sub>RF</sub> × L × V<sub>RF</sub></span>
+                              </span>
+                            </span>
+                            <span className="pt-1 text-xs">d<sub>RF</sub> × √2</span>
+                          </span>
+                          <span className="align-middle">²</span>
+                        </div>
+
+                        <div className="text-xs bg-card/50 p-4 rounded-md border border-border/30">
+                          <div className="font-semibold mb-2 text-foreground">Expanded form:</div>
+                          <div className="space-y-2">
+                            <div>η<sub>surf</sub> = 10³ × [η<sub>0</sub>]²</div>
+                            <div>where η<sub>0</sub> =
+                              <span className="inline-flex flex-col items-center mx-1 align-middle">
+                                <span className="border-b border-current px-1 text-[0.65rem]">ω × C × V<sub>RF</sub></span>
+                                <span className="text-[0.65rem]">√2</span>
+                              </span>
+                            </div>
+                            <div>and C =
+                              <span className="inline-flex flex-col items-center mx-1 align-middle">
+                                <span className="border-b border-current px-1 text-[0.65rem]">ε₀ × π × w<sub>RF</sub> × L</span>
+                                <span className="text-[0.65rem]">d<sub>RF</sub></span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="mt-4 pt-4 border-t border-border/30 text-xs text-muted-foreground space-y-1">
+                          <div className="font-semibold mb-2 text-foreground">Variables:</div>
+                          <div>ω: RF angular frequency</div>
+                          <div>ε₀: permittivity of free space</div>
+                          <div>w<sub>RF</sub>: RF electrode width</div>
+                          <div>L: trap length</div>
+                          <div>d<sub>RF</sub>: RF electrode spacing</div>
+                          <div>V<sub>RF</sub>: RF voltage</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 1.0 }}
+          className="mt-8 grid md:grid-cols-2 gap-6"
         >
           <Card className="bg-primary/10 backdrop-blur-sm border-primary/30">
             <CardHeader>
@@ -147,7 +276,7 @@ export function SectionComparison() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground leading-relaxed">
-                Each trap design offers unique advantages: 3D traps excel in stability and depth, while 2D traps provide
+                Each trap design offers unique advantages: 3D traps excel in stability and depth, while traps provide
                 scalability for large-scale quantum computing applications.
               </p>
             </CardContent>

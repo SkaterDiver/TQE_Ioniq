@@ -71,7 +71,7 @@ export function SectionConclusion() {
         >
           <div className="inline-block">
             <div className="text-sm text-muted-foreground mb-2">Powered by</div>
-            <div className="text-2xl font-bold tracking-wider text-primary">TINGS QUANTUM ENGINEERS</div>
+            <div className="text-2xl font-bold tracking-wider text-primary">TING'S QUANTUM ENGINEERS</div>
             <div className="h-px w-full bg-gradient-to-r from-transparent via-primary to-transparent mt-2" />
           </div>
         </motion.div>
