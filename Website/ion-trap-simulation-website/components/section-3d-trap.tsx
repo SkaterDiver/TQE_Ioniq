@@ -83,76 +83,22 @@ export function Section3DTrap() {
                 </div>
                 <CardTitle>Additional Parameters</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
+              <CardContent className="space-y-2">
                 {[
-                  "Rod spacing",
-                  "Rod length",
-                  "Endcap distance",
-                  "RF amplitude and frequency",
-                  "DC offset voltages",
+                  "Rod radius: 2.915 mm",
+                  "Rod length: 41.205 mm",
+                  "Rod spacing: 7.809 mm",
+                  "Radial AC voltage (radial frequency voltage): 73.299 eV",
+                  "Direct current voltage: 15.315 eV",
+                  "Endcap radius: 7.264 mm",
+                  "Endcap thickness: 0.591 mm",
+                  "Endcap distance from trap center: 2.264 mm",
+                  "Endcap voltage: 4.219 V",
+                  "RF drive frequency: 5.813 mHz",
                 ].map((param) => (
                   <div key={param} className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2" />
-                    <p className="text-muted-foreground">{param}</p>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-
-        {/* Challenges & Optimizations */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
-            <Card className="bg-card/50 backdrop-blur-sm border-destructive/20 h-full">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-destructive/20 flex items-center justify-center mb-4">
-                  <AlertCircle className="w-6 h-6 text-destructive" />
-                </div>
-                <CardTitle>Challenges</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                {[
-                  "Numerical instability at high RF",
-                  "Mesh resolution vs. compute time",
-                  "Maintaining perfect electrode symmetry",
-                  "Balancing trap depth with alignment",
-                ].map((challenge) => (
-                  <div key={challenge} className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-destructive mt-2" />
-                    <p className="text-muted-foreground">{challenge}</p>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <Card className="bg-card/50 backdrop-blur-sm border-primary/20 h-full">
-              <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4 glow-cyan">
-                  <TrendingUp className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle>Optimizations</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                {[
-                  "Mesh refinement improvements",
-                  "Automated multi-parameter sweeps",
-                  "Gradient-based depth maximization",
-                  "Compensation algorithms for distortion",
-                ].map((optimization) => (
-                  <div key={optimization} className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                    <p className="text-muted-foreground">{optimization}</p>
+                    <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0" />
+                    <p className="text-muted-foreground text-sm">{param}</p>
                   </div>
                 ))}
               </CardContent>
