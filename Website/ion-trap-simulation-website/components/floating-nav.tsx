@@ -3,11 +3,12 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Atom, Box, Layers, GitCompare, CheckCircle, Menu, X } from "lucide-react"
+import { Atom, Box, Layers, GitCompare, CheckCircle, Menu, X, Target } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navItems = [
   { id: "ion-trap", label: "What Are Ion Traps?", icon: Atom },
+  { id: "task", label: "The Task", icon: Target },
   { id: "3d-trap", label: "3D RF Paul Trap", icon: Box },
   { id: "2d-trap", label: "2D Surface Ion Trap", icon: Layers },
   { id: "comparison", label: "Comparison", icon: GitCompare },
@@ -21,13 +22,21 @@ export function FloatingNav() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
-          }
-        })
+        // Sort entries by intersection ratio and position
+        const visibleEntries = entries.filter(entry => entry.isIntersecting)
+
+        if (visibleEntries.length > 0) {
+          // Find the entry with highest intersection ratio
+          const mostVisible = visibleEntries.reduce((prev, current) =>
+            current.intersectionRatio > prev.intersectionRatio ? current : prev
+          )
+          setActiveSection(mostVisible.target.id)
+        }
       },
-      { threshold: 0.5 },
+      {
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+        rootMargin: "-10% 0px -10% 0px"
+      },
     )
 
     const sections = document.querySelectorAll("section[id]")
