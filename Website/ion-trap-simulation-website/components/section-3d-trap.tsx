@@ -102,39 +102,6 @@ export function Section3DTrap() {
           </motion.div>
         </div>
 
-        {/* Performance Metrics */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-12"
-        >
-          <Card className="bg-card/50 backdrop-blur-sm border-accent/20">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-accent" />
-                Performance Metrics
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {[
-                  { label: "Trap Depth", value: "eV", desc: "Max/min effective potential difference" },
-                  { label: "Trap Center", value: "x, y, z", desc: "Spatial alignment coordinates" },
-                  { label: "Field Symmetry", value: "Score", desc: "Quadrupole field uniformity" },
-                  { label: "Ion Stability", value: "Region", desc: "Stable confinement zone" },
-                ].map((metric) => (
-                  <div key={metric.label} className="p-4 rounded-lg bg-muted/30 border border-accent/20">
-                    <p className="text-sm text-muted-foreground mb-1">{metric.label}</p>
-                    <p className="text-2xl font-bold text-accent mb-1">{metric.value}</p>
-                    <p className="text-xs text-muted-foreground/70">{metric.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
-
         {/* Challenges & Optimizations */}
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           <motion.div
