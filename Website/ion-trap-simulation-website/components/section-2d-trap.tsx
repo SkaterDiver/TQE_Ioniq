@@ -24,14 +24,14 @@ export function Section2DTrap() {
             Simulation 2
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-text">Surface Ion Paul Trap</span>
+            <span className="gradient-text">Surface Ion RF Trap</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Microfabricated planar electrode layout with ions floating above the chip surface
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid lg:grid-cols-3 gap-8 mb-12">
           {/* Description */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -64,6 +64,42 @@ export function Section2DTrap() {
                     <p className="text-muted-foreground">Scalable for quantum computing</p>
                   </div>
                 </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          {/* Additional Parameters */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.25 }}
+          >
+            <Card className="bg-card/50 backdrop-blur-sm border-primary/20 h-full">
+              <CardHeader>
+                <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4 glow-cyan">
+                  <Layers className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle>Additional Parameters</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                {[
+                  "Width of center DC electrode: 0.5220 mm",
+                  "Width of RF electrodes: 0.1003 mm",
+                  "Spacing of RF electrodes from center: 0.1010 mm",
+                  "RF voltage applied to rods: 89.1617 V",
+                  "DC voltage applied to rods: 19.8779 V",
+                  "Endcap radius: 6.1583 mm",
+                  "Endcap thickness: 0.5116 mm",
+                  "Endcap distance from trap center: 1.0194 mm",
+                  "DC voltage applied to endcaps: 0.9872 V",
+                  "RF drive frequency: 10.2910 MHz",
+                  "Total trap length: 3.0216 mm",
+                ].map((param) => (
+                  <div key={param} className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                    <p className="text-muted-foreground text-sm">{param}</p>
+                  </div>
+                ))}
               </CardContent>
             </Card>
           </motion.div>

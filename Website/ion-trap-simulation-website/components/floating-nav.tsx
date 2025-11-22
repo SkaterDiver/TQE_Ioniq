@@ -10,7 +10,7 @@ const navItems = [
   { id: "ion-trap", label: "What Are Ion Traps?", icon: Atom },
   { id: "task", label: "The Task", icon: Target },
   { id: "3d-trap", label: "3D RF Paul Trap", icon: Box },
-  { id: "2d-trap", label: "2D Surface Ion Trap", icon: Layers },
+  { id: "2d-trap", label: "Surface Ion RF Trap", icon: Layers },
   { id: "comparison", label: "Comparison", icon: GitCompare },
   { id: "conclusion", label: "Final Results", icon: CheckCircle },
 ]
