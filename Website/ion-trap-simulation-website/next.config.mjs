@@ -9,9 +9,6 @@ const nextConfig = {
     ],
   },
   reactStrictMode: true,
-    output: 'export',
-  skipTrailingSlashRedirect: true,
-  // Only enable this during development if needed
   // typescript: {
   //   ignoreBuildErrors: false,
   // },
