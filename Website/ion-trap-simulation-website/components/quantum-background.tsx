@@ -8,11 +8,8 @@ export function QuantumBackground(): JSX.Element {
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
-
     const ctx = canvas.getContext("2d")
     if (!ctx) return
-
-    // Handle high-DPI screens
     const resizeCanvas = () => {
       const dpr = Math.max(window.devicePixelRatio || 1, 1)
       canvas.style.width = `${window.innerWidth}px`
@@ -48,7 +45,7 @@ export function QuantumBackground(): JSX.Element {
       vx: (Math.random() - 0.5) * 0.5,
       vy: (Math.random() - 0.5) * 0.5,
       size: Math.random() * 2 + 1,
-      opacity: Math.random() * 0.5 + 0.2,
+      opacity: Math.random() * 0.5 + 0.20,
       createdAt: Date.now(),
     })
 
