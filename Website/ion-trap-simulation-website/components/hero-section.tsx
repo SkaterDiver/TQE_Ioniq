@@ -21,7 +21,9 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-12"
         >
-          <h1 className="text-2xl md:text-3xl font-bold tracking-wider text-primary mb-2">TINGS QUANTUM ENGINEERS</h1>
+          <h1 className="text-2xl md:text-3xl font-bold tracking-wider text-primary mb-2">
+            TINGS QUANTUM ENGINEERS
+          </h1>
           <div className="h-px w-32 mx-auto bg-gradient-to-r from-transparent via-primary to-transparent" />
         </motion.div>
 
@@ -70,11 +72,27 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 1 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
         >
-          <Button size="lg" className="bg-white text-black hover:bg-white/90 glow-cyan group">
+          <Button
+            size="lg"
+            className="bg-white text-black hover:bg-white/90 glow-cyan group"
+            onClick={() => {
+              const section = document.getElementById("ion-trap")
+              section?.scrollIntoView({ behavior: "smooth" })
+            }}
+          >
             Explore the Study
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
-          <Button size="lg" variant="outline" className="border-primary/50 hover:bg-primary/10 group bg-transparent">
+
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-primary/50 hover:bg-primary/10 group bg-transparent"
+            onClick={() => {
+              const section = document.getElementById("3d-trap")
+              section?.scrollIntoView({ behavior: "smooth" })
+            }}
+          >
             <Play className="mr-2 group-hover:scale-110 transition-transform" />
             View Results
           </Button>
