@@ -18,7 +18,7 @@ export function Section2DTrap() {
       src: "/Srf_trap.png",
     },
     {
-      label: "Electric Potential Graph",
+      label: "Surface Trap Cross Section",
       src: "/Electric_Potential_Graph.png",
     },
     {
@@ -282,6 +282,7 @@ export function Section2DTrap() {
                   width={600}
                   height={600}
                   className="rounded-lg border border-secondary/20 object-cover"
+                  unoptimized={item.src.endsWith('.gif')}
                 />
                 <p className="text-xs text-muted-foreground mt-3 text-center">{item.label}</p>
               </CardContent>

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
+import Image from "next/image"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Box, Gauge, AlertCircle, TrendingUp } from "lucide-react"
@@ -10,6 +11,21 @@ import { Box, Gauge, AlertCircle, TrendingUp } from "lucide-react"
 export function Section3DTrap() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+
+  const diagrams = [
+    {
+      label: "3D Pole Trap Model",
+      src: "/Pole_trap.png",
+    },
+    {
+      label: "Pole Trap Cross Section",
+      src: "/Pole_trap_cross_section.png",
+    },
+    {
+      label: "Pseudopotential Animation",
+      src: "/Pole_pseudo.gif",
+    },
+  ]
 
   return (
     <section id="3d-trap" ref={ref} className="relative z-10 py-20 px-4">
@@ -174,29 +190,28 @@ export function Section3DTrap() {
           </Card>
         </motion.div>
 
-        {/* Diagram Placeholders */}
+        {/* Visualization Images */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.7 }}
           className="grid md:grid-cols-3 gap-6"
         >
-          {["SolidWorks 3D Model: RF Rod Assembly", "Potential Surface Plot", "Field Symmetry Heatmap"].map(
-            (placeholder) => (
-              <Card key={placeholder} className="bg-card/30 backdrop-blur-sm border-primary/20">
-                <CardContent className="p-6">
-                  <div className="aspect-square bg-muted/50 rounded-lg flex items-center justify-center border border-primary/20">
-                    <div className="text-center space-y-2 p-4">
-                      <div className="w-12 h-12 mx-auto rounded-full bg-primary/20 flex items-center justify-center glow-cyan">
-                        <Box className="w-6 h-6 text-primary" />
-                      </div>
-                      <p className="text-xs text-muted-foreground">{placeholder}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ),
-          )}
+          {diagrams.map((item) => (
+            <Card key={item.label} className="bg-card/30 backdrop-blur-sm border-primary/20">
+              <CardContent className="p-6">
+                <Image
+                  src={item.src}
+                  alt={item.label}
+                  width={600}
+                  height={600}
+                  className="rounded-lg border border-primary/20 object-cover"
+                  unoptimized={item.src.endsWith('.gif')}
+                />
+                <p className="text-xs text-muted-foreground mt-3 text-center">{item.label}</p>
+              </CardContent>
+            </Card>
+          ))}
         </motion.div>
       </div>
     </section>

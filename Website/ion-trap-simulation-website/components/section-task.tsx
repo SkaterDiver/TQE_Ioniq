@@ -15,7 +15,8 @@ export function SectionTask() {
 
   const metrics = [
     {
-      metric: "depth_eV",
+      metric: "Trap Depth",
+      variable: "depth_eV",
       icon: Zap,
       color: "primary",
       meaning: "The trap depth in electronvolts. Represents how strongly the ion is confined.",
@@ -25,7 +26,8 @@ export function SectionTask() {
         "A deeper trap is generally more stable and robust against stray fields, noise, or thermal motion.",
     },
     {
-      metric: "minU_eV",
+      metric: "Lowest Field Region",
+      variable: "minU_eV",
       icon: Activity,
       color: "secondary",
       meaning: "The minimum effective potential inside the trap.",
@@ -34,7 +36,8 @@ export function SectionTask() {
         "Helps verify that a well-defined potential well exists and that the trap isn't shallow or irregular.",
     },
     {
-      metric: "maxU_eV",
+      metric: "Highest Field Region",
+      variable: "maxU_eV",
       icon: Activity,
       color: "accent",
       meaning: "The maximum effective potential inside the interior vacuum region.",
@@ -42,7 +45,8 @@ export function SectionTask() {
       importance: "Defines the 'ceiling' of the trap, used in computing trap depth.",
     },
     {
-      metric: "trap_x, trap_y, trap_z",
+      metric: "Position",
+      variable: "trap_x, trap_y, trap_z",
       icon: MapPin,
       color: "primary",
       meaning: "The x, y, and z coordinates of the trap minimum.",
@@ -52,7 +56,8 @@ export function SectionTask() {
         "Shows the exact location of the trapped ion. Important for identifying asymmetries or misalignment.",
     },
     {
-      metric: "offset_mm",
+      metric: "Trap Offset",
+      variable: "offset_mm",
       icon: Ruler,
       color: "secondary",
       meaning: "The distance (in millimeters) between the trap center and the designed geometric center.",
@@ -62,7 +67,8 @@ export function SectionTask() {
         "Lower offset means better charge symmetry and stability. High offsets indicate unbalanced geometry or misalignment.",
     },
     {
-      metric: "P_est_mW",
+      metric: "Estimated Power",
+      variable: "P_est_mW",
       icon: Gauge,
       color: "accent",
       meaning: "Estimated RF power from the EV solver reported in milliwatts.",
@@ -113,7 +119,7 @@ export function SectionTask() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground leading-relaxed">
-                Our objective is to design, simulate, and optimize a 3D RF Paul trap in COMSOL by experimenting with electrode geometry and voltages to understand and improve the electrostatic and pseudopotential landscapes that confine a single Yb⁺ ion. We did this using optimization techniques to update the values of six parameters shown below.
+                Our objective is to design, simulate, and optimize a 3D RF Paul trap in COMSOL by experimenting with electrode geometry and voltages to understand and improve the electrostatic and pseudopotential landscapes that confine a chain of Yb⁺ ions. We did this using optimization techniques to update the values of six parameters shown below.
               </p>
             </CardContent>
           </Card>
@@ -131,7 +137,7 @@ export function SectionTask() {
               <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4 glow-cyan">
                 <Target className="w-6 h-6 text-primary" />
               </div>
-              <CardTitle>The Adjustable Parameters</CardTitle>
+              <CardTitle>Trap Metrics - How We Measure an Ion Trap</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -164,9 +170,14 @@ export function SectionTask() {
                           <div className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${colorClass}`}>
                             <Icon className="w-5 h-5" />
                           </div>
-                          <h4 className="font-mono text-sm md:text-base font-semibold text-primary flex-1">
-                            {item.metric}
-                          </h4>
+                          <div className="flex-1">
+                            <h4 className="text-sm md:text-base font-semibold text-primary">
+                              {item.metric}
+                            </h4>
+                            <p className="font-mono text-xs text-muted-foreground/70 mt-0.5">
+                              {item.variable}
+                            </p>
+                          </div>
                           <ChevronDown
                             className={cn(
                               "w-5 h-5 text-muted-foreground transition-transform duration-300",
