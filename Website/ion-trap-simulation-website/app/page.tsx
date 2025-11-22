@@ -6,6 +6,7 @@ import { Section3DTrap } from "@/components/section-3d-trap"
 import { Section2DTrap } from "@/components/section-2d-trap"
 import { SectionComparison } from "@/components/section-comparison"
 import { SectionConclusion } from "@/components/section-conclusion"
+import { SectionReferences } from "@/components/section-references"
 import { FloatingNav } from "@/components/floating-nav"
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <Section2DTrap />
       <SectionComparison />
       <SectionConclusion />
+      <SectionReferences />
       <FloatingNav />
     </main>
   )

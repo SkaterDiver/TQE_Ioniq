@@ -178,11 +178,82 @@ export function Section2DTrap() {
           </Card>
         </motion.div>
 
+        {/* Simulation Metrics */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mb-12"
+        >
+          <Card className="bg-gradient-to-br from-secondary/10 to-secondary/5 backdrop-blur-sm border-secondary/30">
+            <CardHeader>
+              <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mb-4 glow-violet">
+                <TrendingUp className="w-6 h-6 text-secondary" />
+              </div>
+              <CardTitle className="text-2xl">Simulation Results</CardTitle>
+              <p className="text-sm text-muted-foreground mt-2">
+                COMSOL Multiphysics 6.3.0 — Global Evaluation Metrics
+              </p>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="space-y-2">
+                  <div className="text-sm text-muted-foreground">Trap Depth</div>
+                  <div className="text-3xl font-bold text-secondary">1.205 eV</div>
+                  <div className="text-xs text-muted-foreground">depth_eV</div>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="text-sm text-muted-foreground">Minimum Potential</div>
+                  <div className="text-3xl font-bold text-secondary">24.575 eV</div>
+                  <div className="text-xs text-muted-foreground">minU_eV</div>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="text-sm text-muted-foreground">Maximum Potential</div>
+                  <div className="text-3xl font-bold text-secondary">25.780 eV</div>
+                  <div className="text-xs text-muted-foreground">maxU_eV</div>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="text-sm text-muted-foreground">Trap Position (x, y, z)</div>
+                  <div className="text-xl font-bold text-secondary">
+                    0, -9.82×10<sup>-4</sup>, 1.48×10<sup>-4</sup>
+                  </div>
+                  <div className="text-xs text-muted-foreground">meters</div>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="text-sm text-muted-foreground">Offset Distance</div>
+                  <div className="text-3xl font-bold text-secondary">0.993 mm</div>
+                  <div className="text-xs text-muted-foreground">offset_mm</div>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="text-sm text-muted-foreground">Estimated Power</div>
+                  <div className="text-3xl font-bold text-secondary">0.116 µW</div>
+                  <div className="text-xs text-muted-foreground">P_est_mW</div>
+                  <div className="mt-2 px-2 py-1 rounded bg-secondary/20 text-xs text-secondary font-semibold inline-block">
+                    665,000× Lower Power
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 p-4 rounded-lg bg-muted/30 border border-secondary/20">
+                <p className="text-xs text-muted-foreground">
+                  <strong className="text-foreground">Model:</strong> Surface_trap(v4).mph |
+                  <strong className="text-foreground ml-2">Date:</strong> Nov 21 2025, 22:54
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
         {/* Diagram Placeholders */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
           className="grid md:grid-cols-3 gap-6"
         >
           {["SolidWorks Model: 2D Electrode Layout", "2D Potential Map", "Chip Cross-Section Field Lines"].map(
