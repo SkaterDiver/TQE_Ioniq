@@ -24,7 +24,7 @@ export function Section2DTrap() {
             Simulation 2
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-text">2D Surface Ion Trap</span>
+            <span className="gradient-text">Surface Ion Paul Trap</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Microfabricated planar electrode layout with ions floating above the chip surface
@@ -83,10 +83,10 @@ export function Section2DTrap() {
               </CardHeader>
               <CardContent className="space-y-3">
                 {[
-                  "Lower trap depth compared to 3D traps",
+                  "Lower trap depth compared to the Paul trap",
                   "Sensitive to stray electric fields",
                   "Complex electrode shape constraints",
-                  "Micromotion suppression issues",
+                  "Shaping a field direction to create a low pseudopotential zone for the ions",
                 ].map((challenge) => (
                   <div key={challenge} className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-destructive mt-2" />
