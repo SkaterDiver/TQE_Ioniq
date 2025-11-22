@@ -9,6 +9,7 @@ const nextConfig = {
     ],
   },
   reactStrictMode: true,
+    output: 'export',
   // Only enable this during development if needed
   // typescript: {
   //   ignoreBuildErrors: false,
