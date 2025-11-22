@@ -70,7 +70,7 @@ export function Section3DTrap() {
             </Card>
           </motion.div>
 
-          {/* Adjustable Parameters */}
+          {/* Additional Parameters */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -81,7 +81,7 @@ export function Section3DTrap() {
                 <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mb-4 glow-violet">
                   <Gauge className="w-6 h-6 text-secondary" />
                 </div>
-                <CardTitle>Adjustable Parameters</CardTitle>
+                <CardTitle>Additional Parameters</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 {[
@@ -90,7 +90,6 @@ export function Section3DTrap() {
                   "Endcap distance",
                   "RF amplitude and frequency",
                   "DC offset voltages",
-                  "Electrode alignment",
                 ].map((param) => (
                   <div key={param} className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2" />

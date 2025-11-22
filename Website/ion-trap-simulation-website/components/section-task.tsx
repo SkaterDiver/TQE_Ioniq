@@ -109,11 +109,11 @@ export function SectionTask() {
               <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mb-4 glow-violet">
                 <Target className="w-6 h-6 text-secondary" />
               </div>
-              <CardTitle>[Section Title - To Be Added]</CardTitle>
+              <CardTitle>Objective</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground leading-relaxed">
-                [Content to be provided by user]
+                Our objective is to design, simulate, and optimize a 3D RF Paul trap in COMSOL by experimenting with electrode geometry and voltages to understand and improve the electrostatic and pseudopotential landscapes that confine a single Yb⁺ ion. We did this using optimization techniques to update the values of six parameters shown below.
               </p>
             </CardContent>
           </Card>
