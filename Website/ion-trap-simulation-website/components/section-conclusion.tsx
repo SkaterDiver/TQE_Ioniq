@@ -33,8 +33,8 @@ export function SectionConclusion() {
           <Card className="bg-card/50 backdrop-blur-sm border-primary/20 mb-8">
             <CardContent className="p-8 md:p-12">
               <p className="text-lg md:text-xl text-foreground leading-relaxed text-balance mb-6">
-                Through advanced simulation tools, RF optimization, and SolidWorks-based geometric modeling,{" "}
-                <span className="text-primary font-semibold">Tings Quantum Engineers</span> developed two validated
+                Through advanced simulation and geometric modelling using COMSOL and optimization,{" "}
+                <span className="text-primary font-semibold">Ting's Quantum Engineers</span> developed two validated
                 simulations for ion confinement systems.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed text-balance">
@@ -51,7 +51,11 @@ export function SectionConclusion() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 glow-cyan group">
+          <Button
+            size="lg"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 glow-cyan group"
+            onClick={() => window.open('https://github.com/SkaterDiver/TQE_Ioniq', '_blank')}
+          >
             <Github className="mr-2" />
             View Project Code
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
