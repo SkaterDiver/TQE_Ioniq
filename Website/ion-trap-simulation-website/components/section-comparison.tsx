@@ -19,27 +19,32 @@ export function SectionComparison() {
     },
     {
       category: "Trap Depth",
-      trap3d: "High (several eV)",
-      trap2d: "Lower (sub-eV)",
-      highlight3d: true,
+      trap3d: "11.568 eV",
+      trap2d: "24.359 eV (2.1× higher)",
+      highlight2d: true,
     },
     {
-      category: "Ion Stability",
-      trap3d: "Excellent 3D confinement",
-      trap2d: "Good with careful tuning",
-      highlight3d: true,
+      category: "Power Consumption",
+      trap3d: "71.51 mW",
+      trap2d: "2.19 µW (32,700× lower)",
+      highlight2d: true,
+    },
+    {
+      category: "Trap Offset",
+      trap3d: "10.00 mm",
+      trap2d: "0.423 mm (better centering)",
+      highlight2d: true,
+    },
+    {
+      category: "RF Frequency",
+      trap3d: "6.4 MHz",
+      trap2d: "30.0 MHz (4.7× higher)",
     },
     {
       category: "Fabrication",
       trap3d: "Complex machining",
       trap2d: "Microfabrication scalable",
       highlight2d: true,
-    },
-    {
-      category: "Noise Sensitivity",
-      trap3d: "More robust",
-      trap2d: "Sensitive to stray fields",
-      highlight3d: true,
     },
     {
       category: "Scalability",
@@ -263,10 +268,25 @@ export function SectionComparison() {
               <CardTitle className="text-primary">Optimization Improvements</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground leading-relaxed">
-                Through advanced simulation tools and RF optimization, we achieved significant improvements in trap
-                depth, field symmetry, and ion stability for both trap types.
-              </p>
+              <div className="space-y-3">
+                <p className="text-muted-foreground leading-relaxed">
+                  Through COMSOL Multiphysics optimization, we achieved remarkable improvements:
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                    <span><strong className="text-primary">3D Trap:</strong> 62.9× increase in trap depth (0.184 eV → 11.568 eV)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                    <span><strong className="text-primary">Surface Trap:</strong> 20.2× increase in trap depth (1.205 eV → 24.359 eV)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                    <span>Improved field symmetry and reduced offset distances for better ion positioning</span>
+                  </li>
+                </ul>
+              </div>
             </CardContent>
           </Card>
 
@@ -275,10 +295,25 @@ export function SectionComparison() {
               <CardTitle className="text-secondary">Key Insights</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground leading-relaxed">
-                Each trap design offers unique advantages: 3D traps excel in stability and depth, while Surface traps provide
-                scalability for large-scale quantum computing applications.
-              </p>
+              <div className="space-y-3">
+                <p className="text-muted-foreground leading-relaxed">
+                  Our optimized designs reveal surprising results:
+                </p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-secondary mt-0.5 shrink-0" />
+                    <span><strong className="text-secondary">Surface traps</strong> now achieve 2.1× higher trap depth than 3D traps</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-secondary mt-0.5 shrink-0" />
+                    <span>Surface traps consume 32,700× less power while maintaining superior performance</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-secondary mt-0.5 shrink-0" />
+                    <span>Both designs demonstrate excellent scalability potential for quantum computing</span>
+                  </li>
+                </ul>
+              </div>
             </CardContent>
           </Card>
         </motion.div>

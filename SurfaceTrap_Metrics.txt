@@ -1,6 +1,6 @@
-% Model:              Surface_trap(v4).mph
+% Model:              Surface_trap(v4)1.mph
 % Version:            COMSOL 6.3.0.420
-% Date:               Nov 21 2025, 22:54
+% Date:               Nov 23 2025, 02:02
 % Table:              Table 1 - Global Evaluation 1
 % depth_eV               minU_eV                  maxU_eV                  trap_x                   trap_y                   trap_z                   offset_mm                P_est_mW (kg^2*m^6/(s^8*A^2))
-1.2050268536378113       24.575433402358197       25.780460255996008       0                        -9.820200000000001E-4    1.475E-4                 0.9930355131615386       1.1577954684762308E-4
+24.358714381550527       135.4995095857338        159.85822396728432       0                        -3.946475E-4             1.525E-4                 0.4230873423493664       0.002188169509449676

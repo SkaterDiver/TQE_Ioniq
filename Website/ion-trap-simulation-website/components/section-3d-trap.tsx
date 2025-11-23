@@ -101,16 +101,16 @@ export function Section3DTrap() {
               </CardHeader>
               <CardContent className="space-y-2">
                 {[
-                  "Rod radius: 2.915 mm",
-                  "Rod length: 41.205 mm",
-                  "Rod spacing: 7.809 mm",
-                  "Radial AC voltage (radial frequency voltage): 73.299 eV",
-                  "Direct current voltage: 15.315 eV",
-                  "Endcap radius: 7.264 mm",
-                  "Endcap thickness: 0.591 mm",
-                  "Endcap distance from trap center: 2.264 mm",
-                  "Endcap voltage: 4.219 V",
-                  "RF drive frequency: 5.813 MHz",
+                  "Rod radius: 1.000 mm",
+                  "Rod length: 40.000 mm",
+                  "Rod spacing: 8.873 mm",
+                  "RF voltage: 75.000 V",
+                  "DC voltage: 102.900 V",
+                  "Endcap radius: 7.200 mm",
+                  "Endcap thickness: 0.845 mm",
+                  "Endcap distance from trap center: 0.360 mm",
+                  "Endcap voltage: 2.500 V",
+                  "RF drive frequency: 6.400 MHz",
                 ].map((param) => (
                   <div key={param} className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0" />
@@ -143,26 +143,26 @@ export function Section3DTrap() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="space-y-2">
                   <div className="text-sm text-muted-foreground">Trap Depth</div>
-                  <div className="text-3xl font-bold text-primary">0.184 eV</div>
+                  <div className="text-3xl font-bold text-primary">11.568 eV</div>
                   <div className="text-xs text-muted-foreground">depth_eV</div>
                 </div>
 
                 <div className="space-y-2">
                   <div className="text-sm text-muted-foreground">Minimum Potential</div>
-                  <div className="text-3xl font-bold text-primary">15.012 eV</div>
+                  <div className="text-3xl font-bold text-primary">72.806 eV</div>
                   <div className="text-xs text-muted-foreground">minU_eV</div>
                 </div>
 
                 <div className="space-y-2">
                   <div className="text-sm text-muted-foreground">Maximum Potential</div>
-                  <div className="text-3xl font-bold text-primary">15.195 eV</div>
+                  <div className="text-3xl font-bold text-primary">84.374 eV</div>
                   <div className="text-xs text-muted-foreground">maxU_eV</div>
                 </div>
 
                 <div className="space-y-2">
                   <div className="text-sm text-muted-foreground">Trap Position (x, y, z)</div>
                   <div className="text-xl font-bold text-primary">
-                    0, 5.0×10<sup>-6</sup>, 0.01
+                    -5.0×10<sup>-6</sup>, -5.0×10<sup>-6</sup>, 0.01
                   </div>
                   <div className="text-xs text-muted-foreground">meters</div>
                 </div>
@@ -175,15 +175,15 @@ export function Section3DTrap() {
 
                 <div className="space-y-2">
                   <div className="text-sm text-muted-foreground">Estimated Power</div>
-                  <div className="text-3xl font-bold text-primary">77.20 mW</div>
+                  <div className="text-3xl font-bold text-primary">71.51 mW</div>
                   <div className="text-xs text-muted-foreground">P_est_mW</div>
                 </div>
               </div>
 
               <div className="mt-6 p-4 rounded-lg bg-muted/30 border border-primary/20">
                 <p className="text-xs text-muted-foreground">
-                  <strong className="text-foreground">Model:</strong> 3d_pole_trap (1).mph |
-                  <strong className="text-foreground ml-2">Date:</strong> Nov 21 2025, 23:37
+                  <strong className="text-foreground">Model:</strong> 3d_pole_trap(optimized).mph |
+                  <strong className="text-foreground ml-2">Date:</strong> Nov 23 2025, 00:05
                 </p>
               </div>
             </CardContent>

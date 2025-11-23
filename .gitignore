@@ -1,5 +1,4 @@
-# COMSOL Multiphysics files (can be very large)
-*.mph
+
 
 # Node modules
 node_modules/

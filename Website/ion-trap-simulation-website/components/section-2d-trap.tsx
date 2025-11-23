@@ -99,17 +99,17 @@ export function Section2DTrap() {
               </CardHeader>
               <CardContent className="space-y-2">
                 {[
-                  "Width of center DC electrode: 0.5220 mm",
-                  "Width of RF electrodes: 0.1003 mm",
-                  "Spacing of RF electrodes from center: 0.1010 mm",
-                  "RF voltage applied to rods: 89.1617 V",
-                  "DC voltage applied to rods: 19.8779 V",
-                  "Endcap radius: 6.1583 mm",
-                  "Endcap thickness: 0.5116 mm",
-                  "Endcap distance from trap center: 1.0194 mm",
-                  "DC voltage applied to endcaps: 0.9872 V",
-                  "RF drive frequency: 10.2910 MHz",
-                  "Total trap length: 3.0216 mm",
+                  "Width of center DC electrode: 0.1143 mm",
+                  "Width of RF electrodes: 0.1929 mm",
+                  "Spacing of RF electrodes from center: 0.1929 mm",
+                  "RF voltage: 328.5714 V",
+                  "DC voltage: 97.1429 V",
+                  "Endcap radius: 3.0000 mm",
+                  "Endcap thickness: 0.2000 mm",
+                  "Endcap distance from trap center: 0.5000 mm",
+                  "Endcap voltage: 0.1000 V",
+                  "RF drive frequency: 30.0000 MHz",
+                  "Total trap length: 1.2143 mm",
                 ].map((param) => (
                   <div key={param} className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
@@ -212,54 +212,56 @@ export function Section2DTrap() {
               </p>
             </CardHeader>
             <CardContent>
-              {/* ... existing metrics (unchanged) ... */}
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="space-y-2">
                   <div className="text-sm text-muted-foreground">Trap Depth</div>
-                  <div className="text-3xl font-bold text-secondary">1.205 eV</div>
+                  <div className="text-3xl font-bold text-secondary">24.359 eV</div>
                   <div className="text-xs text-muted-foreground">depth_eV</div>
+                  <div className="mt-2 px-2 py-1 rounded bg-secondary/20 text-xs text-secondary font-semibold inline-block">
+                    2.1× Higher than 3D Trap
+                  </div>
                 </div>
 
                 <div className="space-y-2">
                   <div className="text-sm text-muted-foreground">Minimum Potential</div>
-                  <div className="text-3xl font-bold text-secondary">24.575 eV</div>
+                  <div className="text-3xl font-bold text-secondary">135.500 eV</div>
                   <div className="text-xs text-muted-foreground">minU_eV</div>
                 </div>
 
                 <div className="space-y-2">
                   <div className="text-sm text-muted-foreground">Maximum Potential</div>
-                  <div className="text-3xl font-bold text-secondary">25.780 eV</div>
+                  <div className="text-3xl font-bold text-secondary">159.858 eV</div>
                   <div className="text-xs text-muted-foreground">maxU_eV</div>
                 </div>
 
                 <div className="space-y-2">
                   <div className="text-sm text-muted-foreground">Trap Position (x, y, z)</div>
                   <div className="text-xl font-bold text-secondary">
-                    0, -9.82×10<sup>-4</sup>, 1.48×10<sup>-4</sup>
+                    0, -3.95×10<sup>-4</sup>, 1.53×10<sup>-4</sup>
                   </div>
                   <div className="text-xs text-muted-foreground">meters</div>
                 </div>
 
                 <div className="space-y-2">
                   <div className="text-sm text-muted-foreground">Offset Distance</div>
-                  <div className="text-3xl font-bold text-secondary">0.993 mm</div>
+                  <div className="text-3xl font-bold text-secondary">0.423 mm</div>
                   <div className="text-xs text-muted-foreground">offset_mm</div>
                 </div>
 
                 <div className="space-y-2">
                   <div className="text-sm text-muted-foreground">Estimated Power</div>
-                  <div className="text-3xl font-bold text-secondary">0.116 µW</div>
+                  <div className="text-3xl font-bold text-secondary">2.19 µW</div>
                   <div className="text-xs text-muted-foreground">P_est_mW</div>
                   <div className="mt-2 px-2 py-1 rounded bg-secondary/20 text-xs text-secondary font-semibold inline-block">
-                    665,000× Lower Power
+                    32,700× Lower Power
                   </div>
                 </div>
               </div>
 
               <div className="mt-6 p-4 rounded-lg bg-muted/30 border border-secondary/20">
                 <p className="text-xs text-muted-foreground">
-                  <strong className="text-foreground">Model:</strong> Surface_trap(v4).mph |
-                  <strong className="text-foreground ml-2">Date:</strong> Nov 21 2025, 22:54
+                  <strong className="text-foreground">Model:</strong> Surface_trap(v4)1.mph |
+                  <strong className="text-foreground ml-2">Date:</strong> Nov 23 2025, 02:02
                 </p>
               </div>
             </CardContent>
