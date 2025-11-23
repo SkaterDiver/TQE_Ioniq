@@ -1,0 +1,40 @@
+=====================================================
+
+Design Choices
+
+-----------------------------------------------------
+
+Started by us wanting to make a new design of the pole trap, however there really were no big improvements 
+that we could think of
+
+Then considered building a penning trap, however it seemed even less effective than the standard pole trap 
+since it could only hold a single ion
+
+Then came the idea to make a surface trap. It was ambitious but had enough benefits to be worth the challenge
+
+----------------------------------------------------
+
+Surface trap design benefits:
+
+- Easy to manufacture, electrodes are simple and lay on an isoelectronic base sheet and then can be sputtered,
+spin coated or PEVCD.
+
+- Scalable design, where new rows of them can be placed side by side on a chip, and then are easier to interface when
+floating above the chip
+
+----------------------------------------------------
+
+Surface trap challenges:
+
+- Need to do our own math to calculate the power estimate and the trap depth
+	- calculated power estimate using capacitance formula for parallel plates rather than rods
+	- trap depth formula stayed the same, but the COMSOL ion trap region might be less accurate
+
+- Hypothetically lower trap depth, as ions are generally further from the electrodes and the field is weaker
+	- means more sensitive to particles in the imperfect vacuum, or external electric fields
+
+- Hard to determine the effect on efficiency, but could be potentially lower since stronger fields are required to trap 
+the ions at similar depths (stronger field == more power)
+
+- Really, really hard to make and simulate the perfect field conditions required to create the nested low potential zone
+
