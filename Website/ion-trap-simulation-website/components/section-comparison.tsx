@@ -104,13 +104,8 @@ export function SectionComparison() {
                   className="grid grid-cols-3 gap-4 p-6 border-b border-border/30 last:border-b-0 hover:bg-muted/20 transition-colors"
                 >
                   <div className="font-semibold text-foreground">{row.category}</div>
-                  <div
-                    className={`text-center ${row.highlight3d ? "text-primary font-medium" : "text-muted-foreground"}`}
-                  >
-                    <div className="flex items-center justify-center gap-2">
-                      {row.highlight3d && <Check className="w-4 h-4 text-primary" />}
-                      <span>{row.trap3d}</span>
-                    </div>
+                  <div className="text-center text-muted-foreground">
+                    <span>{row.trap3d}</span>
                   </div>
                   <div
                     className={`text-center ${
