@@ -119,7 +119,7 @@ export function SectionTask() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground leading-relaxed">
-                Our objective is to design, simulate, and optimize a 3D RF Paul trap in COMSOL by experimenting with electrode geometry and voltages to understand and improve the electrostatic and pseudopotential landscapes that confine a chain of Yb⁺ ions. We did this using optimization techniques to update the values of six parameters shown below.
+                Our objective is to design, simulate, and optimize a 3D RF Paul trap and a Surface Ion trap in COMSOL by experimenting with electrode geometry and voltages to understand and improve the electrostatic and pseudopotential landscapes that confine a chain of Yb⁺ ions.
               </p>
             </CardContent>
           </Card>
