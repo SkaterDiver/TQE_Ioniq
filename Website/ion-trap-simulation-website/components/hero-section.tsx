@@ -60,7 +60,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-pretty"
         >
-          A comprehensive study simulating and optimizing 3D RF Paul Traps and 2D Surface Ion Traps. We analyzed
+          A comprehensive study simulating and optimizing 3D RF Paul Traps and Surface Ion RF Traps. We analyzed
           electrode geometry, RF/DC voltages, trap depth, and ion stability to design optimal configurations for quantum
           computing applications.
         </motion.p>

@@ -276,7 +276,7 @@ export function SectionComparison() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground leading-relaxed">
-                Each trap design offers unique advantages: 3D traps excel in stability and depth, while traps provide
+                Each trap design offers unique advantages: 3D traps excel in stability and depth, while Surface traps provide
                 scalability for large-scale quantum computing applications.
               </p>
             </CardContent>
