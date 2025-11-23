@@ -110,7 +110,7 @@ export function Section3DTrap() {
                   "Endcap thickness: 0.591 mm",
                   "Endcap distance from trap center: 2.264 mm",
                   "Endcap voltage: 4.219 V",
-                  "RF drive frequency: 5.813 mHz",
+                  "RF drive frequency: 5.813 MHz",
                 ].map((param) => (
                   <div key={param} className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 shrink-0" />
